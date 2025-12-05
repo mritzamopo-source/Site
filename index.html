@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8" />
+<title>لوازم خانگی الماس | نسخه فول خفن</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<style>
+    body {
+        margin: 0;
+        font-family: sans-serif;
+        background: #000;
+        color: #fff;
+    }
+    header {
+        background: linear-gradient(90deg,#000,#1a1a1a,#000);
+        padding: 15px 40px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 2px solid gold;
+        position: sticky;
+        top: 0;
+        z-index: 999;
+        box-shadow: 0 0 20px gold;
+    }
+    .logo {
+        font-size: 32px;
+        color: gold;
+        font-weight: bold;
+        text-shadow: 0 0 10px gold;
+    }
+    nav a {
+        color: #ccc;
+        margin-left: 25px;
+        text-decoration: none;
+        font-size: 16px;
+    }
+    nav a:hover { color: gold; }
+
+    /* --- SLIDER AUTO --- */
+    .slider {
+        width: 100%;
+        height: 330px;
+        overflow: hidden;
+        position: relative;
+        border-bottom: 2px solid gold;
+    }
+    .slides {
+        width: 300%;
+        height: 100%;
+        display: flex;
+        animation: slide 12s infinite;
+    }
+    .slides img {
+        width: 100%;
+        height: 330px;
+        object-fit: cover;
+    }
+    @keyframes slide {
+        0% { margin-right: 0; }
+        33% { margin-right: 100%; }
+        66% { margin-right: 200%; }
+        100% { margin-right: 0; }
+    }
+
+    /* --- SEARCH --- */
+    .search-box {
+        margin: 20px auto;
+        width: 90%;
+        text-align: center;
+    }
+    .search-box input {
+        width: 70%;
+        padding: 14px;
+        border: 2px solid gold;
+        border-radius: 12px;
+        background: #111;
+        color: white;
+        box-shadow: 0 0 10px gold;
+        font-size: 16px;
+    }
+
+    /* TITLES */
+    h2 {
+        color: gold;
+        margin: 25px 5%;
+        text-shadow: 0 0 10px gold;
+    }
+
+    /* SIDEBAR */
+    .sidebar {
+        width: 200px;
+        background: #111;
+        border-left: 2px solid gold;
+        position: fixed;
+        top: 0;
+        right: -220px;
+        height: 100%;
+        padding: 20px;
+        transition: .4s;
+        z-index: 9999;
+    }
+    .sidebar.open { right: 0; }
+    .sidebar h3 { color: gold; }
+    .sidebar a {
+        display: block;
+        margin: 10px 0;
+        color: #ccc;
+        text-decoration: none;
+    }
+    .toggle-sidebar {
+        position: fixed;
+        right: 15px;
+        bottom: 20px;
+        background: gold;
+        color: #000;
+        padding: 12px 20px;
+        border-radius: 10px;
+        cursor: pointer;
+        font-weight: bold;
+        box-shadow: 0 0 15px gold;
+        z-index: 9999;
+    }
+
+    /* PRODUCTS */
+    .product-grid {
+        width: 90%;
+        margin: auto;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 25px;
+    }
+    .product {
+        background: #111;
+        padding: 20px;
+        border: 1px solid gold;
+        border-radius: 12px;
+        transition: .3s;
+    }
+    .product:hover {
+        transform: scale(1.05);
+        box-shadow: 0 0 20px gold;
+    }
+    .product img { width: 100%; border-radius: 10px; }
+    .price-box { margin-top: 10px; }
+    .old-price { text-decoration: line-through; color: #888; }
+    .new-price { color: gold; font-weight: bold; font-size: 18px; }
+    .buy-btn {
+        margin-top: 15px;
+        display: inline-block;
+        padding: 10px 15px;
+        border-radius: 8px;
+        background: gold;
+        color: #000;
+        font-weight: bold;
+        text-decoration: none;
+    }
+
+    /* ANNOUNCE BOX */
+    .announce {
+        width: 90%;
+        margin: 25px auto;
+        padding: 15px;
+        border: 1px solid gold;
+        background: #111;
+        box-shadow: 0 0 15px gold;
+        border-radius: 12px;
+    }
+
+    /* COMMENTS */
+    .comments {
+        width: 90%;
+        margin: auto;
+        background: #111;
+        padding: 15px;
+        border-radius: 10px;
+        border: 1px solid gold;
+    }
+    .comment-item {
+        margin-bottom: 10px;
+        padding-bottom: 10px;
+        border-bottom: 1px solid #333;
+    }
+    .stars { color: gold; }
+
+    footer {
+        background: #111;
+        padding: 25px;
+        text-align: center;
+        border-top: 2px solid gold;
+        margin-top: 40px;
+    }
+
+</style>
+</head>
+<body>
+
+<header>
+    <div class="logo">لوازم خانگی الماس</div>
+    <nav>
+        <a href="#">تماس: 09132122043</a>
+        <a href="#">تلگرام: @Amopo_MM</a>
+        <a href="#">پشتیبانی: @Amopo_m</a>
+    </nav>
+</header>
+
+<!-- SLIDER AUTO -->
+<div class="slider">
+    <div class="slides">
+        <img src="banner1.jpg" />
+        <img src="banner2.jpg" />
+        <img src="banner3.jpg" />
+    </div>
+</div>
+
+<div class="search-box">
+    <input type="text" placeholder="جستجوی محصول..." />
+</div>
+
+<!-- SIDEBAR BUTTON -->
+<div class="toggle-sidebar" onclick="openSidebar()">دسته‌بندی‌ها</div>
+<div class="sidebar" id="sidebar">
+    <h3>دسته‌بندی‌ها</h3>
+    <a href="#">جهیزیه</a>
+    <a href="#">بلور</a>
+    <a href="#">قابلمه</a>
+    <a href="#">لیوان</a>
+    <a href="#">پذیرایی</a>
+</div>
+
+<script>
+function openSidebar(){
+    document.getElementById("sidebar").classList.toggle("open");
+}
+</script>
+
+<!-- ANNOUNCE -->
+<div class="announce">
+    ✔ ارسال به سراسر کشور — ✔ تخفیف ویژه جهیزیه — ✔ کیفیت عالی
+</div>
+
+<!-- PRODUCTS -->
+<h2>محصولات ویژه</h2>
+<div class="product-grid">
+
+    <div class="product">
+        <img src="golden-opal.jpg">
+        <h3>ست گلدن اوپال</h3>
+        <div class="price-box">
+            <span class="old-price">4,200,000</span><br>
+            <span class="new-price">3,750,000 تومان</span>
+        </div>
+        <a class="buy-btn" href="tel:09132122043">تماس برای خرید</a>
+    </div>
+
+    <div class="product">
+        <img src="sample2.jpg">
+        <h3>بلور اصفهان</h3>
+        <div class="price-box">
+            <span class="old-price">3,900,000</span><br>
+            <span class="new-price">3,300,000 تومان</span>
+        </div>
+        <a class="buy-btn" href="tel:09132122043">تماس برای خرید</a>
+    </div>
+
+    <div class="product">
+        <h3>لیوان کریستالی</h3>
+        <p>برای اطلاعات بیشتر به مغازه مراجعه کنید</p>
+    </div>
+
+    <div class="product">
+        <h3>کاسه پذیرایی</h3>
+        <p>اطلاعات کامل در فروشگاه موجود است</p>
+    </div>
+</div>
+
+<!-- COMMENTS -->
+<h2>نظرات مشتریان</h2>
+<div class="comments">
+    <div class="comment-item">
+        <div class="stars">★★★★★</div>
+        کیفیت عالی بود
+    </div>
+    <div class="comment-item">
+        <div class="stars">★★★★☆</div>
+        بسته‌بندی خیلی خوب
+    </div>
+</div>
+
+<footer>
+    © تمامی حقوق متعلق به لوازم خانگی الماس است.
+</footer>
+
+</body>
+</html>
